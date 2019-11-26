@@ -1,0 +1,25 @@
+begin_with: open
+end_with: close
+events:
+  - name: open
+    next: 
+      - level2
+      - level3
+    messages: 
+      - please chose
+      - 1 2
+  - name: level2
+    next: 
+      - level4
+    messages:
+      - level2 msg
+  - name: level3
+    next:
+      - level4
+    messages:
+      - level3 msg
+  - name: level4
+    next:
+      - close
+    messages:
+      - level4 msg
